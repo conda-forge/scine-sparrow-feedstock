@@ -1,0 +1,12 @@
+diff --git a/src/Sparrow/CMakeLists.txt b/src/Sparrow/CMakeLists.txt
+index 3d67744..6318e03 100644
+--- a/src/Sparrow/CMakeLists.txt
++++ b/src/Sparrow/CMakeLists.txt
+@@ -120,6 +120,7 @@ add_executable(SparrowApp ${SPARROW_APP_FILES})
+ add_executable(Scine::SparrowApp ALIAS SparrowApp)
+ 
+ set_target_properties(SparrowApp PROPERTIES OUTPUT_NAME sparrow)
++set_target_properties(SparrowApp PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
+ 
+ target_link_libraries(SparrowApp PRIVATE
+   Boost::program_options

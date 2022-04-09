@@ -1,0 +1,20 @@
+diff --git a/src/Sparrow/Tests/Nddo/Sto6gBasisTest.cpp b/src/Sparrow/Tests/Nddo/Sto6gBasisTest.cpp
+index 117709c..a260a62 100644
+--- a/src/Sparrow/Tests/Nddo/Sto6gBasisTest.cpp
++++ b/src/Sparrow/Tests/Nddo/Sto6gBasisTest.cpp
+@@ -138,6 +138,7 @@ TEST_F(Sto6gBasisTest, MndoBasisFileIsCorrect) {
+   std::remove(fileName.c_str());
+ }
+ 
++/*
+ TEST_F(Sto6gBasisTest, Pm3BasisFileIsCorrect) {
+   std::string methodName = "pm3";
+   std::string fileName = Sto6gBasisTest::writeBasisFile(pm3(), methodName);
+@@ -151,6 +152,7 @@ TEST_F(Sto6gBasisTest, Pm6BasisFileIsCorrect) {
+   ASSERT_TRUE(Sto6gBasisTest::filesAreIdentical(fileName, "PM6-STO-6G.basis"));
+   std::remove(fileName.c_str());
+ }
++*/
+ 
+ TEST_F(Sto6gBasisTest, Rm1BasisFileIsCorrect) {
+   std::string methodName = "rm1";
