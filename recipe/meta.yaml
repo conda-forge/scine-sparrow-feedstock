@@ -1,6 +1,6 @@
 {% set name = "sparrow" %}
 {% set pkg_name = "scine-" + name %}
-{% set version = "3.0.0" %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ pkg_name }}
@@ -8,20 +8,17 @@ package:
 
 source:
   - url: https://github.com/qcscine/sparrow/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 70636871694c9363ae3fb2df5050bddb22667b71d875d5a7e9afd872f6a2b65d
+    sha256: dcdaeed790f22d57e0ba022d8cf440efaaf135021c60a539ad46daca40ab8f3b
     fn: {{ name }}.tar.gz
     patches:
-      - runtime_output_directory.patch  # [osx]
       - osx_tests.patch  # [osx]
-  - url: https://github.com/qcscine/development-utils/archive/refs/tags/4.0.0.tar.gz
-    sha256: 54002c2082b6bb75672ec66bf9cf3935bbdf6b085ed9b4d7174cbdedb7c2275d
+  - url: https://github.com/qcscine/development-utils/archive/refs/tags/5.0.0.tar.gz
+    sha256: bb2f161ed15811def85ca635924427356564a811779993123077f4ada048be84
     fn: dev.tar.gz
     folder: dev
-    patches:
-      - cxx_standard.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   script:
     - set -ex
