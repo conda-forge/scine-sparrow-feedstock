@@ -18,12 +18,12 @@ source:
     folder: dev
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script:
     - set -ex
-    - >
-      cmake ${CMAKE_ARGS} -B _build -G Ninja -DSCINE_MARCH=""
+    - export CXXFLAGS="-DBOOST_ASIO_DISABLE_STD_ALIGNED_ALLOC ${CXXFLAGS}"  # [osx and x86_64]
+    - cmake ${CMAKE_ARGS} -B _build -G Ninja -DSCINE_MARCH=""
     - cmake --build _build
     - ctest --test-dir _build --output-on-failure -R '^Sparrow$'  # [build_platform == target_platform]
     - cmake --install _build
