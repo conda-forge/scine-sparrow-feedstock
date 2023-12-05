@@ -18,7 +18,7 @@ source:
     folder: dev
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   script:
     - set -ex
@@ -41,7 +41,7 @@ requirements:
     - llvm-openmp  # [osx]
     - libgomp  # [linux]
   host:
-    - boost-cpp
+    - libboost-devel
     - cereal
     - eigen
     - gtest
@@ -50,7 +50,6 @@ requirements:
     - scine-core
     - scine-utilsos
   run:
-    - boost-cpp
 
 test:
   commands:
